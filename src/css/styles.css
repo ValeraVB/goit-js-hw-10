@@ -1,65 +1,74 @@
-/* Скидання стандартних відступів і полів для всіх елементів */
-* {
+/* Скидання стандартних відступів і відступів */
+html,
+body {
   margin: 0;
   padding: 0;
+}
+
+/* Забезпечення відступів для секції */
+section {
+  display: flex;
+  flex-direction: column;
+  padding: 20px; /* Додаткові відступи всередині секції */
+  background-color: #f0f0f0;
+  margin-bottom: 24px;
+}
+
+/* Стилізація посилання "На головну" */
+a {
+  text-decoration: none;
+  color: #007bff;
+  margin-bottom: 10px;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Стилізація заголовка */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Стилізація контейнера */
+.container {
+  max-width: 600px;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: column;
+  align-items: center;
+}
+
+/* Стилізація поля вибору дати і часу */
+#datetime-picker {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  margin-right: 10px;
   box-sizing: border-box;
 }
 
-/* Стилі для тіла сторінки */
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  background-color: #f0f0f0;
-  padding: 20px;
-}
-
-/* Стилі для секції */
-section {
-  background-color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-section h1 {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-section a {
-  display: inline-block;
-  text-decoration: none;
-  color: #333;
-  padding: 5px 10px;
-  background-color: #f0f0f0;
-  border-radius: 4px;
-  transition: background-color 0.3s ease;
-}
-
-section a:hover {
-  background-color: #e0e0e0;
-}
-
-/* Стилі для поля вводу та кнопки */
-#datetime-picker {
+/* Стилізація кнопки "Старт" */
+#startTimer {
   padding: 10px;
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-button[data-start] {
-  padding: 10px 20px;
-  font-size: 16px;
   background-color: #007bff;
   color: #fff;
   border: none;
   border-radius: 4px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 1rem;
+  margin-bottom: 12px;
 }
 
-button[data-start]:hover {
+#startTimer.disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+#startTimer:hover {
   background-color: #0056b3;
 }
 
@@ -88,4 +97,83 @@ button[data-start]:hover {
   color: #777;
   text-transform: uppercase;
   margin-top: 5px;
+}
+
+/* Контейнер для snackbar */
+.iziToast-container {
+  width: 600px; /* Встановлюємо ширину контейнера */
+}
+
+/* Базові стилі для iziToast */
+.iziToast {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  display: block; /* Розміщення в стовпчик */
+  width: 100%;
+  margin-bottom: 16px; /* Відступ між snackbar */
+  padding: 10px 20px;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: #fff;
+}
+
+/* Snackbar успішного повідомлення */
+.iziToast.iziToast-success {
+  background-color: #4caf50;
+}
+
+/* Snackbar повідомлення про помилку */
+.iziToast.iziToast-error {
+  background-color: #f44336;
+}
+
+/* Стиль заголовка */
+.iziToast-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Стиль повідомлення */
+.iziToast-message {
+  font-size: 14px;
+}
+
+/* Стилі для введення delay (ms) */
+.form input[type='number'],
+.form input[type='radio'],
+.form button[type='submit'] {
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+  display: block;
+  width: calc(
+    100% - 40px
+  ); /* Встановлюємо ширину відповідно до загального блоку */
+  margin-bottom: 16px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+/* Стилі для радіокнопок */
+.form input[type='radio'] {
+  display: inline-block;
+  width: auto;
+  margin-right: 10px;
+}
+
+/* Стилі для кнопки */
+.form button[type='submit'] {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 12px; /* Опускаємо кнопку на 12px */
+}
+
+.form button[type='submit']:hover {
+  background-color: #0056b3;
 }
