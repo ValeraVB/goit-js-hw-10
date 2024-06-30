@@ -104,19 +104,6 @@ h1 {
   width: 600px; /* Встановлюємо ширину контейнера */
 }
 
-/* Базові стилі для iziToast */
-.iziToast {
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
-  display: block; /* Розміщення в стовпчик */
-  width: 100%;
-  margin-bottom: 16px; /* Відступ між snackbar */
-  padding: 10px 20px;
-  border-radius: 4px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  color: #fff;
-}
-
 /* Snackbar успішного повідомлення */
 .iziToast.iziToast-success {
   background-color: #4caf50;
@@ -126,6 +113,7 @@ h1 {
 .iziToast.iziToast-error {
   background-color: #f44336;
 }
+*/
 
 /* Стиль заголовка */
 .iziToast-title {
